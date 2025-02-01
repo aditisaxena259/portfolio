@@ -1,0 +1,56 @@
+/* Main container style for the entire section */
+.skills-section {
+  width: 100%; /* Full width */
+  
+  align-items: center;
+  background-color: black;
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+/* Skill grid container style */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamically adjust based on screen size */
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: black; /* Dark gray background */
+  border-radius: 1.5rem;
+  box-shadow: 0px 4px 10px rgba(187, 140, 140, 0.2);
+  width: 100%; /* Ensures grid takes full width */
+  max-width: 100%; /* Makes sure the grid uses available space */
+}
+
+/* Individual skill card style */
+.skill-card {
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: 0px 4px 10px #ff9a9e;
+  border: 1px solid #4a5568;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: center;
+}
+
+/* Hover effect */
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px #f6585e;
+}
+.skills-section h2{
+  color:#f6585e;
+  margin-left:1rem;
+}
+
+/* Skill name text styling */
+.skill-card p {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: white;
+}
