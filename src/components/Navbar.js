@@ -87,10 +87,10 @@ const Navbar = () => {
         <div className={`contact-popup ${showContact ? "show" : ""}`}>
           <p>Want to work together? Reach out to me:</p>
           <a href="mailto:your@email.com" className="contact-link">
-            <FaEnvelope /> your@email.com
+            <FaEnvelope /> saxena.aditi2805@gmail.com
           </a>
           <a href="tel:+1234567890" className="contact-link">
-            <FaPhoneAlt /> +123 456 7890
+            <FaPhoneAlt /> +91 9811912821
           </a>
         </div>
 
