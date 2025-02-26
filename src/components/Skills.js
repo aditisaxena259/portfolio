@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { FaCode, FaShieldAlt, FaBrain, FaReact, FaLock, FaServer, FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava, FaNodeJs } from "react-icons/fa";
 import { SiNextdotjs, SiMongodb, SiTypescript, SiTailwindcss, SiJupyter, SiTensorflow, SiPytorch, SiScikitlearn, SiSupabase, SiAstro, SiNumpy } from "react-icons/si";
 import "./skills.css"; 
+import { useState } from "react";
+import { FaAngleDown } from "react-icons/fa";
 
 const skills = [
   { name: "Machine Learning", icon: <FaBrain className="text-blue-500" /> },
@@ -31,11 +33,13 @@ const skills = [
   { name: "NumPy", icon: <SiNumpy className="text-green-500"/>}
 ];
 
+
+
 const SkillCard = ({ name, icon }) => (
   <motion.div
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
-    className="skill-card"  // Apply the class from the CSS
+    className="skill-card"
   >
     <div className="text-3xl">{icon}</div>
     <p>{name}</p>
@@ -43,10 +47,14 @@ const SkillCard = ({ name, icon }) => (
 );
 
 const SkillGrid = () => {
+  const [expanded, setExpanded] = useState(false);
+  
+  // Limit the number of initially visible skills (e.g., first 2 rows = 8 skills)
+  const visibleSkills = expanded ? skills : skills.slice(0, 10);
+
   return (
-    
     <section className="skills-section">
-    <motion.div
+      <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -57,10 +65,43 @@ const SkillGrid = () => {
       </motion.div>
 
       <div className="skill-grid">
-        {skills.map((skill, index) => (
+        {visibleSkills.map((skill, index) => (
           <SkillCard key={index} {...skill} />
         ))}
       </div>
+
+      {/* "See More" Button */}
+      <motion.div 
+        className="see-more-container"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <button 
+          onClick={() => setExpanded(!expanded)}
+          className="see-more-btn"
+        >
+          {expanded ? "See Less" : "See More"}
+          <FaAngleDown className="arrow-icon" />
+          
+        </button>
+      </motion.div>
+      
+      {/* Animate Expansion */}
+      <motion.div
+        initial={false}
+        animate={{ height: expanded ? "auto" : 0, opacity: expanded ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+        className="extra-skills-container"
+      >
+        {expanded && (
+          <div className="skill-grid">
+            {skills.slice(8).map((skill, index) => (
+              <SkillCard key={index + 8} {...skill} />
+            ))}
+          </div>
+        )}
+      </motion.div>
     </section>
   );
 };

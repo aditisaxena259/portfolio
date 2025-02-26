@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg  xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bounce {
+      animation: bounce 1.5s infinite alternate ease-in-out;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+  </style>
+  <rect class="bounce" x="1.5" y="1.5" width="5" height="5" rx="1.91" fill="black"/>
+  <rect class="bounce" x="9" y="1.5" width="5" height="5" rx="1.91" fill="black" style="animation-delay: 0.2s;"/>
+  <rect class="bounce" x="16.5" y="1.5" width="5" height="5" rx="1.91" fill="black" style="animation-delay: 0.4s;"/>
+</svg>

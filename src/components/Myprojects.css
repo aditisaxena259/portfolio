@@ -1,0 +1,157 @@
+/* Parent Container */
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #06021d; /* Dark background */
+}
+
+/* Container for Projects */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Flip Card - Ensures Equal Size */
+.flip-card {
+    background-color: transparent;
+    width: 350px; /* Set fixed width */
+    height: 300px; /* Set fixed height */
+    perspective: 1000px; /* 3D effect */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1), 0px 6px 20px rgba(255, 255, 255, 0.08); /* Elegant glow effect */
+    border-radius: 12px;
+}
+
+/* Flip Card Inner */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Hover Effect */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.15), 0px 12px 30px rgba(255, 255, 255, 0.12); /* Intense glow on hover */
+}
+
+/* Front and Back */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+}
+
+/* Front Side (Image) */
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures full image fits */
+    border-radius: 12px;
+    padding: 5px; /* Prevents image overflow */
+    background-color: black; /* For images with transparency */
+}
+
+/* Back Side (Text) */
+.flip-card-back {
+    background-color: #0d061f; /* Slightly lighter shade for contrast */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: inset 0px 4px 8px rgba(255, 255, 255, 0.08); /* Subtle inner glow */
+}
+
+/* Make Text Fit Properly */
+.flip-card-back h3, .flip-card-back h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .flip-card {
+        width: 90%;
+        height: 280px;
+    }
+}
+/* GitHub Link Style */
+.github-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ddd; /* Subtle grayish-white */
+    transition: transform 0.2s ease-in-out, color 0.3s;
+}
+
+.github-link:hover {
+    transform: scale(1.2);
+    color: #aaa; /* Slightly darker gray on hover */
+}
+
+/* Flip Card Back Styling */
+.flip-card-back {
+    background-color: #0d061f;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: inset 0px 4px 8px rgba(255, 255, 255, 0.08);
+    text-align: center;
+    position: relative;
+}
+
+/* Heading Styling */
+.flip-card-back h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Subheading Styling */
+.flip-card-back h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+/* Divider Styling */
+.flip-card-back hr {
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 8px 0;
+}
+
+/* Description Text */
+.flip-card-back p {
+    font-size: 14px;
+    width: 90%;
+    line-height: 1.5;
+    opacity: 0.9;
+}

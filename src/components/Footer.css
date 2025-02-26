@@ -1,0 +1,156 @@
+/* Footer Container */
+.footer {
+  background-color: #06021d;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Footer Layout */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+/* Footer Branding */
+.footer-brand h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Add Glow on Hover */
+.footer-brand h2:hover,
+.footer-brand p:hover {
+  color: #21cbf3;
+  opacity: 1;
+}
+
+/* Quick Links */
+.footer-links h3,
+.footer-socials h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+/* Underline Animation */
+.footer-links h3::after,
+.footer-socials h3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #21cbf3;
+  margin: 5px auto 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.footer-links h3:hover::after,
+.footer-socials h3:hover::after {
+  width: 80px;
+}
+
+/* Links Styling */
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 5px 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #21cbf3;
+  transform: translateX(5px);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  font-size: 1.8rem;
+  color: white;
+  transition: transform 0.3s ease-in-out, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Icon Glow & Scale Effect */
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #21cbf3;
+  text-shadow: 0px 0px 10px rgba(33, 203, 243, 0.8);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease-in-out, color 0.3s ease;
+}
+
+/* Bounce Effect on Hover */
+.back-to-top:hover {
+  transform: translateY(-5px);
+  color: #21cbf3;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .footer-bottom {
+      flex-direction: column;
+      gap: 10px;
+  }
+}

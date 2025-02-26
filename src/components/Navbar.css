@@ -1,121 +1,301 @@
-/* Basic Navbar Styles */
+/* Enhanced Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1rem;
-    background-color: black;
-    color: white;
-    width: 100%;
-    position: sticky;
-    z-index: 1000;
-    
-  }
-  .navbar.scrolled {
-    background-color: black; /* Slightly transparent when scrolled */
-    padding: 0.8rem 2rem; /* Shrink the navbar */
-    box-shadow: blanchedalmond;
-  }
-  
-  /* Navbar Left Section */
-  .navbar-left {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-  }
-  
-  .nav-links {
-    display: flex; /* Display links horizontally */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 1rem; /* Space between the links */
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover,
-  .nav-links a.active {
-    color:#e63946;
-    border-bottom: 2px solid #e63946;
-  }
-  
-  /* Navbar Center Section (currently unused but can be for logos or other content) */
-  .navbar-center {
-    /* Add any center content styles here */
-  }
-  .navbar.scrolled {
-  background-color: black;/* Slightly transparent when scrolled */
-  padding: 0.8rem 2rem; /* Shrink the navbar */
-  }
-  
-  /* Navbar Right Section for Mobile Menu Toggle */
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .menu-toggle {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  /* Responsive Navbar for Mobile */
-  @media (max-width: 768px) {
-    .navbar-center {
-      display: none;
-    }
-  
-    .navbar-left {
-      width: 100%;
-      justify-content: space-between; /* Keep links to the left and toggle menu to the right */
-    }
-  
-    .navbar-right .menu-toggle {
-      display: block;
-    }
-  
-    .navbar-center.open {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #000000;
-      width: 100%;
-      padding: 1rem;
-    }
-  
-    .nav-links {
-      flex-direction: column; /* Stack links vertically on small screens */
-    }
-  
-    .nav-links li {
-      margin: 1rem 0;
-    }
-  }
-  .social-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-    background-color: #000000;
-    /*padding: 1rem ;*/
-    gap:20px;
-    margin:1rem;
-    padding-inline: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(6, 2, 29, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
+/* Navbar shrink effect on scroll */
+.navbar.scrolled {
+  padding: 0.6rem 2rem;
+  background-color: rgba(6, 2, 29, 0.98);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Navbar Left Section (Logo) */
+.navbar-left {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 1.2rem;
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* Active Link & Hover Effects */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #8ab4ff;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #487ddf;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Contact Button */
+.contact-button {
+  background: linear-gradient(135deg, #487ddf, #3562b3);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(72, 125, 223, 0.3);
+}
+
+.contact-button:hover, 
+.contact-button.active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 125, 223, 0.4);
+  background: linear-gradient(135deg, #3562b3, #487ddf);
+}
+
+/* Contact Popup */
+.contact-popup {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(10, 5, 54, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  width: 280px;
+}
+
+.contact-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.contact-popup p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #8ab4ff;
+}
+
+.contact-link svg {
+  margin-right: 10px;
+  color: #487ddf;
+}
+
+/* Right Section: Social Links & Menu Toggle */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #8ab4ff;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.social-links a {
+  position: relative;
+  display: inline-block;
+}
+
+.social-links img {
+  height: 32px;
+  width: 32px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 5px rgba(72, 125, 223, 0.2));
+}
+
+.social-links a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover::before {
+  width: 44px;
+  height: 44px;
+  border-color: rgba(72, 125, 223, 0.5);
+}
+
 .social-links img:hover {
-  transform: scale(1.2);
-  
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(72, 125, 223, 0.4));
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgba(6, 2, 29, 0.98);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  .nav-links li {
+    margin: 0.8rem 0;
+  }
+
+  .nav-links a {
+    font-size: 1.3rem;
+    padding: 0.8rem 0;
+    display: block;
+  }
+
+  .contact-button {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-right: 15px;
+  }
+
+  .contact-popup {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(-10px);
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .contact-popup.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-left {
+    font-size: 1.5rem;
+  }
+
+  .social-links img {
+    height: 28px;
+    width: 28px;
+  }
+
+  .social-links {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem;
+  }
+
+  .logo-text {
+    font-size: 1.7rem;
+  }
+
+  .social-links {
+    margin-left: 10px;
+  }
 }

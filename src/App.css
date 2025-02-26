@@ -1,38 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 .App {
   text-align: center;
   color: #fff;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background-color: #06021d;
   align-items: center;
-  height: 80vh;
-  max-width: 100%; /* Prevent width overflow */
-  margin: 0;
-  padding: 0;
-  position: relative;
   box-shadow: none;
-  /* Hide extra content */
+
+  /*background: url('assets/star-bg.svg') no-repeat center center fixed;*/
+  
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-  transform: none; /* Remove scaling */
-}
 
 .My-name {
-  font-size: 7rem;
+  margin-top: 15%;
+  font-size: 9rem;
   font-weight: bold;
   align-content: center;
   max-width: 100%; /* Prevent text overflow */
   word-wrap: break-word;
+  
 }
 
+
 .My-tagline {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 26px;
+  font-weight: bold;
   max-width: 100%;
 }
 
@@ -41,7 +34,7 @@ body {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   color: #fff;
-  background: #e63946;
+  background:rgba(73, 12, 134, 0.9);
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -49,11 +42,11 @@ body {
 }
 
 .My-button:hover {
-  background: #ff6b6b;
+  background: rgba(121, 21, 211, 0.9);
 }
 
 .highlight {
-  color: #ff9a9e;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -78,4 +71,36 @@ body {
 /* Apply box-sizing globally */
 * {
   box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .My-name {
+    font-size: 4rem;
+  }
+
+  .My-tagline {
+    font-size: 1.6rem;
+  }
+
+  .My-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .My-name {
+    font-size: 3.5rem;
+  }
+
+  .My-tagline {
+    font-size: 1.4rem;
+  }
+
+  .My-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+  .App{
+    margin-bottom: 0.5rem;
+  }
 }

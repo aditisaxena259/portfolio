@@ -1,56 +1,152 @@
 /* Main container style for the entire section */
 .skills-section {
-  width: 100%; /* Full width */
-  
-  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   background-color: black;
-  padding: 2.5rem;
+  padding: 3rem 2rem;
   overflow: hidden;
+  margin-bottom: 5rem;
+  border-radius: 12px;
+  margin-top: 3rem;
+  
 }
 
-/* Skill grid container style */
+/* Heading styling */
+.skills-section h2 {
+  color: white;
+  font-size: 4.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  
+}
+
+/* Skill grid container */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Dynamically adjust based on screen size */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Better responsiveness */
   gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
   padding: 1.5rem;
-  background-color: black; /* Dark gray background */
-  border-radius: 1.5rem;
-  box-shadow: 0px 4px 10px rgba(187, 140, 140, 0.2);
-  width: 100%; /* Ensures grid takes full width */
-  max-width: 100%; /* Makes sure the grid uses available space */
 }
 
-/* Individual skill card style */
+/* Individual skill card styling */
 .skill-card {
-  background-color: black;
+  background:black;
   color: white;
   padding: 1.5rem;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 0px 4px 10px #ff9a9e;
-  border: 1px solid #4a5568;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  justify-content: space-between;
   text-align: center;
+  box-shadow: inset 0 0 10px rgba(255, 94, 98, 0.2);
+  border: 1px solid rgba(255, 94, 98, 0.3);
+  transition: all 0.3s ease;
 }
 
-/* Hover effect */
+/* Soft hover glow effect */
 .skill-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 4px 15px #f6585e;
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 25px rgba(255, 94, 98, 0.5);
+  border: 1px solid rgba(255, 94, 98, 0.5);
 }
-.skills-section h2{
-  color:#f6585e;
-  margin-left:1rem;
+
+/* Skill icon */
+.skill-card .text-3xl {
+  font-size: 3rem;
 }
 
 /* Skill name text styling */
 .skill-card p {
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* See More Button */
+.see-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
   color: white;
+}
+
+.see-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: black; /* Semi-transparent for glass effect */
+  backdrop-filter: blur(10px); /* Glassmorphism */
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 121, 198, 0.2);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Gradient shimmer effect */
+.see-more-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: black;
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.see-more-btn:hover::before {
+  left: 100%;
+}
+
+.see-more-btn:hover {
+  transform: scale(1.06);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 8px 25px rgba(255, 121, 198, 0.4);
+}
+
+/* Click effect */
+.see-more-btn:active {
+  transform: scale(0.97);
+}
+
+/* Rotating arrow on expansion */
+.arrow-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
+
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Animate expanded skills */
+.extra-skills-container {
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
 }

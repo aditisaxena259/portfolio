@@ -1,55 +1,91 @@
-import React from 'react';
-import Navbar from './components/Navbar.js';
-import About from './components/About.js';
-import MyScene from './components/Myscene.js';
-import SkillCard from './components/Skills.js';
-import Projects from './components/Projects.js';
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Navbar.js";
+import About from "./components/About.js";
+import Myprojects from "./components/Myprojects.js";
+import Experience from "./components/Experience.js";
+import MyWork from "./components/Mywork.js";
+import AboutStory from "./components/AboutStory.js";
+import Footer from "./components/Footer.js";
 import { motion } from "framer-motion";
-import "./App.css"; 
+import { Typewriter } from "react-simple-typewriter";
+import "./App.css";
+
 const App = () => {
+  const [showCursor, setShowCursor] = useState(true);
+
+  // Hide cursor after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setShowCursor(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-    <Navbar />
-        {/* Rest of your app content goes here */}
-    
-    <section className="App">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="My-name"
-      >
-        Hi, I'm <span className="highlight">Aditi Saxena</span>
-      </motion.div>
+      <Navbar />
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="My-tagline"
-      >
-        Web Development  <span className="highlight"> MachineLearning </span> & CyberSecurity <span className="highlight"> Enthusiast </span>.
-      </motion.div>
+      {/* Hero Section with Animated Entry */}
+      <section className="App">
+        {/* Typewriter Effect for Name */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }} 
+          animate={{ opacity: 1, y: 0 }}  
+          transition={{ duration: 1, ease: "easeOut" }} 
+          className="My-name"
+        >
+          <span className="highlight">
+            <Typewriter
+              words={["I am Aditi Saxena"]}
+              loop={1} 
+              cursor={showCursor} // Cursor disappears after 3 sec
+              cursorStyle="|"
+              typeSpeed={100}
+              delaySpeed={2000} 
+            />
+          </span>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="My-cta"
-      >
-        <a href="/documents/Resume.pdf" target="_blank" rel="noopener noreferrer">
+        {/* Typewriter Tagline */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="My-tagline"
+        >
+          <Typewriter
+            words={[
+              "Web Development",
+              "Machine Learning",
+              "CyberSecurity Enthusiast"
+            ]}
+            loop={0} 
+            cursor
+            cursorStyle="_"
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </motion.div>
+
+        {/* Call to Action Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="My-cta"
+        >
+          <a href="/documents/Resume.pdf" target="_blank" rel="noopener noreferrer">
             <button className="My-button">My Resume</button>
           </a>
-      </motion.div>
-    </section>
-    <About/>
-    <SkillCard/>
-    
+        </motion.div>
+      </section>
 
-  </>
+      <AboutStory />
+      <MyWork />
+      <Myprojects />
+      <Experience />
+      <Footer />
+    </>
   );
 };
-
-
 
 export default App;

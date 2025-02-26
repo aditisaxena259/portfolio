@@ -1,54 +1,104 @@
-.projects-container
-{
-    padding:2rem;
-    background-color: black;
-    color:rgb(247, 186, 186);
-}
-.section-title
-{
-    font-style: inherit;
-    font-size: xx-large;
-    color:rgb(247, 186, 186);
-}
-.cards-wrapper
-{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-
-}
-.CardVariants
-{
-    flex: 1 1 calc(30% - 1.5rem); /* Adjusts card size */
-    min-width: 250px;
-    padding: 1.5rem;
-    background: black;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb; /* Light gray border */
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.projects-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; 
-    overflow: hidden; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
+.box {
+    border: 4px solid white;
+    height: 440px;
+    width:540px;
+    margin-top: 4rem;
+    border-radius: 2rem;
+    
+    
   }
-  
-  .project-card {
-    position: absolute;
-    width: 80%;
-    padding: 2rem;
-    background: rgb(222, 109, 109);
-    border-radius: 20px;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  hr {
+    width: 100%;
+    border: 2px solid white;
+    margin-top: 1.5rem;
+  }
+  .parentshape{
+    display:flex;
+    justify-content:left;
+    gap: 2px;
+    
+  }
+  .shape{
+    border:4px solid white;
     color: white;
-    text-align: center;
+    background-color: white ;
+    border-radius: 100%;
+    height:20px;
+    width:20px;
+    margin-top: 2rem;
+    margin-left: 10px;
+  }
+  .headclass
+  {
+    font-family: sans-serif;
+    font-weight:600;
+    color: white;
+    font-size: 6rem;
+    margin-left: 2rem;
+    margin-top: 4rem;
+  }
+  .box#one{
+    border: 4px solid white;
+    height: 240px;
+    width:540px;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    margin-top: 16rem;
+
+  }
+  .parentbox{
+    display: flex;
+    justify-content: space-around;
+  }
+  .boxcol
+  {
+    display: flex;
+    flex-direction: column;
+    gap:8rem;
+    margin-top: -16rem;
+  }
+  .box#two{
+    border: 4px solid white;
+    height: 500px;
+    width:540px;
+    margin-top: -3rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+  }
+  .canvas-container{
+    position: relative;
+    left:1000px;
+    height: 40px;
+    top:-120px;
+    width: fit-content; /* Keeps width minimal */
+   /* Centers if needed */
+    overflow: visible; 
+    
+    
+  }
+  .semicircle
+  {
+    position: relative;
+    background-color: white;
+    height:80px;
+    width:100px;
+    overflow:hidden;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    top:-22px;
+    left: 3px;
+   
+    
+  }
+  .beamsvg {
+    position: absolute;
+    left: -46px;  /* Moves entire SVG 10px left */
+    top: 280px;
+  }
+  .vertical-line {
+    position: absolute;
+    top: -400px;  
+    left: 60%; /* Moves it left (lower value = more left) */
+    transform: translateX(-50%);
   }
   

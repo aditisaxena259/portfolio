@@ -13,6 +13,7 @@
   text-shadow: #e63946;
   color: #ff9a9e;
   
+  
 }
 
 /* About Content */
@@ -124,3 +125,5 @@
       flex: 1 1 100%;
   }
 }
+@media (max-width: 480px)
+{}

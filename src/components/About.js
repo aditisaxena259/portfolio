@@ -103,11 +103,7 @@ const About = () => {
       </div>
 
       {/* Resume Section */}
-      <div className="resume-container">
-        {resumeCards.map((card, index) => (
-          <ResumeCard key={index} {...card} />
-        ))}
-      </div>
+      
     </section>
   );
 };

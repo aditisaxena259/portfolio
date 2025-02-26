@@ -1,0 +1,21 @@
+#girl-svg {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* 👁️ Eyelid Animation (Moves with Mouse Hover) */
+  .eyelid {
+    transition: transform 0.1s ease-out;
+  }
+  
+  /* 😎 Goggles Fade-in Animation */
+  #goggles {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  /* 🤩 Click Effect (Scaling on Click) */
+  #girl-svg:active {
+    transform: scale(1.05);
+  }
+  
