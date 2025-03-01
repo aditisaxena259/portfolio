@@ -43,15 +43,7 @@ const Navbar = () => {
             Home
           </a>
         </li>
-        <li>
-          <a
-            href="#about"
-            className={activeLink === "about" ? "active" : ""}
-            onClick={() => handleLinkClick("about")}
-          >
-            About
-          </a>
-        </li>
+        
         <li>
           <a
             href="#resume"
@@ -84,16 +76,17 @@ const Navbar = () => {
       {/* Right Section: Social Links & Mobile Menu Toggle */}
       <div className="navbar-right">
         {/* Contact Popup */}
+                {/* Contact Popup */}
         <div className={`contact-popup ${showContact ? "show" : ""}`}>
+          <button className="close-popup" onClick={toggleContact}>&times;</button>
           <p>Want to work together? Reach out to me:</p>
-          <a href="mailto:your@email.com" className="contact-link">
+          <a href="mailto:saxena.aditi2805@gmail.com" className="contact-link">
             <FaEnvelope /> saxena.aditi2805@gmail.com
           </a>
-          <a href="tel:+1234567890" className="contact-link">
+          <a href="tel:+919811912821" className="contact-link">
             <FaPhoneAlt /> +91 9811912821
           </a>
         </div>
-
         {/* Mobile Menu Toggle Button */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}

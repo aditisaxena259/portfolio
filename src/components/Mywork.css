@@ -107,6 +107,7 @@
     .project video {
         width: 90%;  /* Take most of the screen */
         max-width: 400px; /* Prevents excessive scaling */
+        display: none;
     }
 }
 
@@ -134,7 +135,6 @@
         text-align: center;
     }
     .project video {
-        width: 95%;
-        max-width: 350px; /* Ensures a good size on small devices */
+        display: none; /* Ensures a good size on small devices */
     }
 }

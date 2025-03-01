@@ -13,15 +13,7 @@ const Footer = () => {
         </div>
 
         {/* Center Section - Quick Links */}
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
+        
 
         {/* Right Section - Socials */}
         <div className="footer-socials">
@@ -43,7 +35,17 @@ const Footer = () => {
       {/* Copyright & Back to Top Button */}
       <div className="footer-bottom">
         <p>© 2025 Aditi Saxena. All Rights Reserved.</p>
-        <a href="#home" className="back-to-top">
+        <a href="#" className="back-to-top" onClick={(e) => {
+    e.preventDefault();
+    const scrollToTop = () => {
+      const position = window.scrollY;
+      if (position > 0) {
+        window.scrollTo(0, position - position / 20); // Adjust divisor to control speed
+        requestAnimationFrame(scrollToTop);
+      }
+    };
+    scrollToTop();
+  }}> 
           <FaArrowUp />
         </a>
       </div>

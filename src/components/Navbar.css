@@ -27,9 +27,6 @@
   font-size: 1.8rem;
   font-weight: bold;
 }
-
-
-
 /* Navbar Links */
 .nav-links {
   display: flex;
@@ -38,7 +35,6 @@
   padding: 0;
   align-items: center;
 }
-
 .nav-links li {
   margin: 0 1.2rem;
   position: relative;
@@ -284,6 +280,7 @@
   .social-links {
     gap: 10px;
   }
+  
 }
 
 @media (max-width: 480px) {
@@ -297,5 +294,117 @@
 
   .social-links {
     margin-left: 10px;
+  }
+}
+/* Contact Popup */
+/* .contact-popup {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: rgba(10, 5, 54, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  width: 280px;
+  max-width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* Show popup */
+.contact-popup.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Close Button */
+.close-popup {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+  color: #8ab4ff;
+}
+
+
+.contact-popup p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #fff;
+  white-space: normal; /* Ensures text wraps properly */
+  word-wrap: break-word;
+  max-width: 90%;
+} 
+
+Contact Links
+.contact-link {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  width: 100%;
+  justify-content: center;
+}
+
+.contact-link:hover {
+  color: #8ab4ff;
+}
+
+.contact-link svg {
+  margin-right: 10px;
+  color: #487ddf;
+} 
+@media  (max-width: 1024px){
+  .contact-popup {
+    width: 200%;
+    right: 50%;
+
+  }
+  
+}
+/* Responsive Popup on Mobile */
+@media (max-width: 768px) {
+  .contact-popup {
+    width: 200%;
+
+  }
+
+  .contact-popup.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-popup {
+    width: 200%;
+    
+  }
+
+  .contact-popup p {
+    font-size: 0.9rem;
+  }
+
+  .close-popup {
+    font-size: 1.3rem;
   }
 }
